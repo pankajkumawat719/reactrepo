@@ -1,16 +1,22 @@
 import { useState } from "react";
 import "./ProductForm.css";
 function ProductForm() {
-  const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
+  // to handle ui using useState created object of more then values
+  const [fullProductInput, setFullProductInput] = useState({
+    title: "",
+    date: "",
+  });
 
-  function titleChangeHandler(event) {
-    setTitle(event.target.value);
-  }
-  function dateChangeHandler(event) {
-    setDate(event.target.value);
-    // console.log("working")
-  }
+  // const [title, setTitle] = useState("");
+  // const [date, setDate] = useState("");
+
+  // function titleChangeHandler(event) {
+  //   setTitle(event.target.value);
+  // }
+  // function dateChangeHandler(event) {
+  //   setDate(event.target.value);
+  //   // console.log("working")
+  // }
   return (
     <form className="productform">
       <div className="productname">
