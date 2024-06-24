@@ -9,6 +9,7 @@ function ProductForm() {
   }
   function dateChangeHandler(event) {
     setDate(event.target.value);
+    // console.log("working")
   }
   return (
     <form className="productform">
