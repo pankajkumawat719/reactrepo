@@ -11,8 +11,8 @@ function ProductForm() {
   //   // Return object with updated parameters
   // }
 
-  const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
+  const [newtitle, setTitle] = useState("");
+  const [newdate, setDate] = useState("");
 
   function titleChangeHandler(event) {
     setTitle(event.target.value);
@@ -21,15 +21,33 @@ function ProductForm() {
     setDate(event.target.value);
     // console.log("working")
   }
+  function submitHandler(event) {
+    event.preventDefault();
+
+    const prosuctData = {
+      title: newtitle,
+      dateL: newdate,
+    };
+
+    console.log(prosuctData);
+
+    setTitle("");
+    setDate("");
+  }
   return (
-    <form className="productform">
+    <form className="productform" onSubmit={submitHandler}>
       <div className="productname">
         <label>Title Name</label>
-        <input type="text" onChange={titleChangeHandler}></input>
+        <input
+          type="text"
+          value={newtitle}
+          onChange={titleChangeHandler}
+        ></input>
       </div>
       <div className="productdate">
         <label> Date</label>
         <input
+          value={newdate}
           type="date"
           onChange={dateChangeHandler}
           min="2023-01-01"
